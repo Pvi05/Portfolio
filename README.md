@@ -4,7 +4,9 @@ An overview of my student &amp; personnal projects
 ## Cleaning and classification of hand-written job titles
 
 SypherAI is a french start-up selling a Saas CRM managing tool. Its tool is capable of cleaning and retriving missing info among potential clients, and sorting them using Machine Learning on previous sales to identify the ones most likely to buy.`
-The job title is one of the most critical information for the ML algorithm. Our mission was to provide a pipeline capable of **cleaning and classifying hand-written job titles** previously extracted from LinkedIn and similars.
+The job title is one of the most critical information for the ML algorithm. 
+
+Our mission was to provide a pipeline capable of **cleaning and classifying hand-written job titles** previously extracted from LinkedIn and similars.
 
 ### The mission further explained
 
