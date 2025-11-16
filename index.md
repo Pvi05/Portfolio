@@ -46,10 +46,11 @@ The main objective of this projet was to reduce manual classification as much as
 I am unable to disclose any code, dataset or app produced in this mission.
 You can however find below a short presentation video of our GUI.
 
-<video width="786" height="169" controls>
-  <source src="videos/demo_c.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<p align="center">
+  <video controls>
+    <source src="videos/demo.mp4">
+  </video>
+</p>
 
 This mission was done as part of a team of 5 people.
 
