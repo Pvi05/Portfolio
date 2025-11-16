@@ -16,6 +16,12 @@ A simple exemple might be the possible job titles for an HR manager. People can 
 Our solution should then categorize all of these titles as a single 'HR manager' in order to be fed to the algorithm.
 Since the variations for a single title can be almost endless, our pipeline should use a natural language processing model in order to extract the semantics of the title rather than doing a simple matching, which would be fastidious and prone to fail.
 
+<img width="786" height="169" alt="Capture d’écran 2025-11-16 à 13 55 05" src="https://github.com/user-attachments/assets/5fb58878-0a38-4397-a331-911273a986f6" />
+<img width="775" height="93" alt="Capture d’écran 2025-11-16 à 13 54 31" src="https://github.com/user-attachments/assets/e738225d-c2db-4778-b404-5e7e25b8506b" />
+<img width="775" height="94" alt="Capture d’écran 2025-11-16 à 13 52 10" src="https://github.com/user-attachments/assets/d8f0062c-e47f-40cb-890f-e8b9bc0ecbaa" />
+<img width="778" height="115" alt="Capture d’écran 2025-11-16 à 13 51 42" src="https://github.com/user-attachments/assets/796c251f-b1d1-48b4-90fa-d848771c79ea" />
+
+
 ### How the mission went 
 
 Between all the NLP models we tested, we selected the DeBERTa-ZeroShot for its great precision and ability to deal well with rare or unique titles, thanks to its semantic capabilities which makes it significantly more resilient than a classic supervised classification model. An active learning approach was also considered as it would make up for the eventual imprecisions of a model over time, but early results showed it inconclusive compared to DeBERTa so it was discontinued.
