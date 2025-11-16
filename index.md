@@ -8,7 +8,7 @@ An overview of my student &amp; personnal projects
 
 ## Cleaning and classification of hand-written job titles
 
-SypherAI is a french start-up selling a Saas CRM managing tool. Its tool is capable of cleaning and retriving missing info among potential clients, and sorting them using Machine Learning on previous sales to identify the ones most likely to buy.`
+SypherAI is a french start-up selling a Saas CRM managing tool. Its tool is capable of cleaning and retriving missing info among potential clients, and sorting them using Machine Learning on previous sales to identify the ones most likely to buy.
 The job title is one of the most critical information for the ML algorithm. 
 
 Our mission was to provide a pipeline capable of **cleaning and classifying hand-written job titles** previously extracted from LinkedIn and similars.
@@ -21,14 +21,13 @@ A simple exemple might be the possible job titles for an HR manager. People can 
 Our solution should then categorize all of these titles as a single 'HR manager' in order to be fed to the algorithm.
 Since the variations for a single title can be almost endless, our pipeline should use a natural language processing model in order to extract the semantics of the title rather than doing a simple matching, which would be fastidious and prone to fail.
 
-<p align="center">
-  ![LinkedIn Exemple](images/LinkedIn1.png){ width=786 height=169 }
-  ![LinkedIn Exemple](images/LinkedIn2.png){ width=775 height=93 }
-  ![LinkedIn Exemple](images/LinkedIn3.png){ width=775 height=94 }
-  ![LinkedIn Exemple](images/LinkedIn4.png){ width=778 height=115 }
-</p>
-
-<p align="center"><em>A variety of HR manager related job titles</em></p>
+<div align='center'>
+  <img alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
+  <img alt="LinkedIn Exemple" src="images/LinkedIn2.png" />
+  <img alt="LinkedIn Exemple" src="images/LinkedIn3.png" />
+  <img alt="LinkedIn Exemple" src="images/LinkedIn4.png" />
+  <p><em>A variety of HR manager related jobs titles</em></p>
+</div>
 
 ### How the mission went 
 
@@ -42,10 +41,15 @@ One of the key technical solution which drasticly improved models results was th
 
 We delivered to SypherIA a fully working and ready to transfert Python code containing our model, paired with a GUI to make using our pipeline easier.
 
+The main objective of this projet was to reduce manual classification as much as possible, and is a success in this regard as for a 1000+ client list, only a handful of low-confidence job titles might need correction.
+
 I am unable to disclose any code, dataset or app produced in this mission.
 You can however find below a short presentation video of our GUI.
 
-
+<video width="786" height="169" controls>
+  <source src="videos/demo_c.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 This mission was done as part of a team of 5 people.
 
