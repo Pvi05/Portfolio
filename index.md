@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Portfolio
 An overview of my student &amp; personnal projects 
 
@@ -16,13 +21,14 @@ A simple exemple might be the possible job titles for an HR manager. People can 
 Our solution should then categorize all of these titles as a single 'HR manager' in order to be fed to the algorithm.
 Since the variations for a single title can be almost endless, our pipeline should use a natural language processing model in order to extract the semantics of the title rather than doing a simple matching, which would be fastidious and prone to fail.
 
-<div align='center'>
-  <img width="786" height="169" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
-  <img width="775" height="93" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
-  <img width="775" height="94" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
-  <img width="778" height="115" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
-  <p><em>A variety of HR manager related jobs titles</em></p>
-</div>
+<p align="center">
+  ![LinkedIn Exemple](images/LinkedIn1.png){ width=786 height=169 }
+  ![LinkedIn Exemple](images/LinkedIn2.png){ width=775 height=93 }
+  ![LinkedIn Exemple](images/LinkedIn3.png){ width=775 height=94 }
+  ![LinkedIn Exemple](images/LinkedIn4.png){ width=778 height=115 }
+</p>
+
+<p align="center"><em>A variety of HR manager related job titles</em></p>
 
 ### How the mission went 
 

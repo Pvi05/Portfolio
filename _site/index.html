@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | My Portfolio</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Home" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Student &amp; Personal projects" />
+<meta property="og:description" content="Student &amp; Personal projects" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="My Portfolio" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Student &amp; Personal projects","headline":"Home","name":"My Portfolio","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">My Portfolio</a></h1>
+
+        
+
+        <p>Student & Personal projects</p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="portfolio">Portfolio</h1>
+<p>An overview of my student &amp; personnal projects</p>
+
+<h2 id="cleaning-and-classification-of-hand-written-job-titles">Cleaning and classification of hand-written job titles</h2>
+
+<p>SypherAI is a french start-up selling a Saas CRM managing tool. Its tool is capable of cleaning and retriving missing info among potential clients, and sorting them using Machine Learning on previous sales to identify the ones most likely to buy.`
+The job title is one of the most critical information for the ML algorithm.</p>
+
+<p>Our mission was to provide a pipeline capable of <strong>cleaning and classifying hand-written job titles</strong> previously extracted from LinkedIn and similars.</p>
+
+<h3 id="the-mission-further-explained">The mission further explained</h3>
+
+<p>Job titles, when hand-written as they are on LinkedIn, can vary a lot even for same or similar work positions, sometimes to the point of being almost obscure.
+A simple exemple might be the possible job titles for an HR manager. People can describe themselves as “Head of HR”, “Recruiting manager”, but also “Talent Acquisition” or even “Head hunter”. Although thoses variations might convey slightly different meanings, they are not relevant for our case (identifying propects) and keeping them as is can be detrimental for the efficiency of the ML algorithm.</p>
+
+<p>Our solution should then categorize all of these titles as a single ‘HR manager’ in order to be fed to the algorithm.
+Since the variations for a single title can be almost endless, our pipeline should use a natural language processing model in order to extract the semantics of the title rather than doing a simple matching, which would be fastidious and prone to fail.</p>
+
+<p align="center">
+  ![LinkedIn Exemple](images/LinkedIn1.png){ width=786 height=169 }
+  ![LinkedIn Exemple](images/LinkedIn2.png){ width=775 height=93 }
+  ![LinkedIn Exemple](images/LinkedIn3.png){ width=775 height=94 }
+  ![LinkedIn Exemple](images/LinkedIn4.png){ width=778 height=115 }
+</p>
+
+<p align="center"><em>A variety of HR manager related job titles</em></p>
+
+<h3 id="how-the-mission-went">How the mission went</h3>
+
+<p>Between all the NLP models we tested, we selected the DeBERTa-ZeroShot for its great precision and ability to deal well with rare or unique titles, thanks to its semantic capabilities which makes it significantly more resilient than a classic supervised classification model. An active learning approach was also considered as it would make up for the eventual imprecisions of a model over time, but early results showed it inconclusive compared to DeBERTa so it was discontinued.</p>
+
+<p>One of the main issue was the identification of target categories, initialy dealt with by using the International Labour Organization classification table ; but as this turned out to be a much wider challenge than the original issue, it was decided in accordance with SypherIA that they would be supplied by the pipeline user. Indeed interesting prospects usually belong in a specific job category, already identified by the sales manager using the CRM manager.</p>
+
+<p>One of the key technical solution which drasticly improved models results was the choice to perform two classifications instead of one. One on the job level (Senior, Junior, Manager, Director, etc) and one on the job departement (HR, Sales, IT, Production, etc). It greatly reduced models confusion between the level part of the title and the departement, which could sometimes lead things like ‘Head IT manager’ to be associated with ‘HR manager’.</p>
+
+<h3 id="what-we-delivered">What we delivered</h3>
+
+<p>We delivered to SypherIA a fully working and ready to transfert Python code containing our model, paired with a GUI to make using our pipeline easier.</p>
+
+<p>I am unable to disclose any code, dataset or app produced in this mission.
+You can however find below a short presentation video of our GUI.</p>
+
+<p>This mission was done as part of a team of 5 people.</p>
+
+<h3 id="keywords">Keywords</h3>
+
+<p>NLP, ZeroShot, Classification, ML</p>
+
+<h2 id="joueur-au-jeu-de-hex">Joueur au Jeu de Hex</h2>
+
+<h2 id="dévellopement-dun-jeu-de-type-automate-cellullaire-basé-sur-la-physique-de-leau">Dévellopement d’un jeu de type automate cellullaire, basé sur la physique de l’eau.</h2>
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
