@@ -47,7 +47,7 @@ I am unable to disclose any code, dataset or app produced in this mission.
 You can however find below a short presentation video of our GUI.
 
 <p align="center">
-  <video controls>
+  <video width="786" controls>
     <source src="videos/demo.mp4">
   </video>
 </p>
