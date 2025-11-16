@@ -17,10 +17,10 @@ Our solution should then categorize all of these titles as a single 'HR manager'
 Since the variations for a single title can be almost endless, our pipeline should use a natural language processing model in order to extract the semantics of the title rather than doing a simple matching, which would be fastidious and prone to fail.
 
 <div align='center'>
-  <img width="786" height="169" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/5fb58878-0a38-4397-a331-911273a986f6" />
-  <img width="775" height="93" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/e738225d-c2db-4778-b404-5e7e25b8506b" />
-  <img width="775" height="94" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/d8f0062c-e47f-40cb-890f-e8b9bc0ecbaa" />
-  <img width="778" height="115" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/796c251f-b1d1-48b4-90fa-d848771c79ea" />
+  <img width="786" height="169" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
+  <img width="775" height="93" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
+  <img width="775" height="94" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
+  <img width="778" height="115" alt="LinkedIn Exemple" src="images/LinkedIn1.png" />
   <p><em>A variety of HR manager related jobs titles</em></p>
 </div>
 
