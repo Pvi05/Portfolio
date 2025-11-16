@@ -16,11 +16,13 @@ A simple exemple might be the possible job titles for an HR manager. People can 
 Our solution should then categorize all of these titles as a single 'HR manager' in order to be fed to the algorithm.
 Since the variations for a single title can be almost endless, our pipeline should use a natural language processing model in order to extract the semantics of the title rather than doing a simple matching, which would be fastidious and prone to fail.
 
-<img width="786" height="169" alt="Capture d’écran 2025-11-16 à 13 55 05" src="https://github.com/user-attachments/assets/5fb58878-0a38-4397-a331-911273a986f6" />
-<img width="775" height="93" alt="Capture d’écran 2025-11-16 à 13 54 31" src="https://github.com/user-attachments/assets/e738225d-c2db-4778-b404-5e7e25b8506b" />
-<img width="775" height="94" alt="Capture d’écran 2025-11-16 à 13 52 10" src="https://github.com/user-attachments/assets/d8f0062c-e47f-40cb-890f-e8b9bc0ecbaa" />
-<img width="778" height="115" alt="Capture d’écran 2025-11-16 à 13 51 42" src="https://github.com/user-attachments/assets/796c251f-b1d1-48b4-90fa-d848771c79ea" />
-
+<div align='center'>
+  <img width="786" height="169" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/5fb58878-0a38-4397-a331-911273a986f6" />
+  <img width="775" height="93" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/e738225d-c2db-4778-b404-5e7e25b8506b" />
+  <img width="775" height="94" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/d8f0062c-e47f-40cb-890f-e8b9bc0ecbaa" />
+  <img width="778" height="115" alt="LinkedIn Exemple" src="https://github.com/user-attachments/assets/796c251f-b1d1-48b4-90fa-d848771c79ea" />
+  <p><em>A variety of HR manager related jobs titles</em></p>
+</div>
 
 ### How the mission went 
 
@@ -28,14 +30,14 @@ Between all the NLP models we tested, we selected the DeBERTa-ZeroShot for its g
 
 One of the main issue was the identification of target categories, initialy dealt with by using the International Labour Organization classification table ; but as this turned out to be a much wider challenge than the original issue, it was decided in accordance with SypherIA that they would be supplied by the pipeline user. Indeed interesting prospects usually belong in a specific job category, already identified by the sales manager using the CRM manager.
 
-One of the key technical solution which drasticly improved models results was the choice to perform two classifications instead of one. One on the job level (Senior, Junior, Manager, Director, etc) and one on the job departement (HR, Sales, IT, Production, etc).
+One of the key technical solution which drasticly improved models results was the choice to perform two classifications instead of one. One on the job level (Senior, Junior, Manager, Director, etc) and one on the job departement (HR, Sales, IT, Production, etc). It greatly reduced models confusion between the level part of the title and the departement, which could sometimes lead things like 'Head IT manager' to be associated with 'HR manager'.
 
 ### What we delivered
 
 We delivered to SypherIA a fully working and ready to transfert Python code containing our model, paired with a GUI to make using our pipeline easier.
 
 I am unable to disclose any code, dataset or app produced in this mission.
-You can although find below a short presentation video of our GUI.
+You can however find below a short presentation video of our GUI.
 
 
 
