@@ -29,7 +29,7 @@ Since the variations for a single title can be almost endless, our pipeline shou
   <p><em>A variety of HR manager related jobs titles</em></p>
 </div>
 
-### How the mission went 
+### How the mission went & my contribution
 
 Between all the NLP models we tested, we selected the DeBERTa-ZeroShot for its great precision and ability to deal well with rare or unique titles, thanks to its semantic capabilities which makes it significantly more resilient than a classic supervised classification model. An active learning approach was also considered as it would make up for the eventual imprecisions of a model over time, but early results showed it inconclusive compared to DeBERTa so it was discontinued.
 
@@ -37,13 +37,15 @@ One of the main issue was the identification of target categories, initialy deal
 
 One of the key technical solution which drasticly improved models results was the choice to perform two classifications instead of one. One on the job level (Senior, Junior, Manager, Director, etc) and one on the job departement (HR, Sales, IT, Production, etc). It greatly reduced models confusion between the level part of the title and the departement, which could sometimes lead things like 'Head IT manager' to be associated with 'HR manager'.
 
+After training some more basic models (the likes of FastText, BERT) to have a performance baseline, I personnally choose performance criterias to design a benchmark helping us in our model choice, and motivated this choice to the client. I also proposed multiple of the ideas cited above to resolve limitations, including the ILO table and the 2-level classification (originating from a tree-like classification idea, simplified into 2 levels).
+
 ### What we delivered
 
 We delivered to SypherIA a fully working and ready to transfert Python code containing our model, paired with a GUI to make using our pipeline easier.
 
 The main objective of this projet was to reduce manual classification as much as possible, and is a success in this regard as for a 1000+ client list, only a handful of low-confidence job titles might need correction.
 
-I am unable to disclose any code, dataset or app produced in this mission.
+Due to confidentiality, I am unable to disclose any code, dataset or app produced in this mission.
 You can however find below a short presentation video of our GUI.
 
 <p align="center">
