@@ -88,7 +88,7 @@ The Game of Hex is a very challenging game to try and solve algorithmically, due
 ## The player
 
 To develop this player I took inspiration from the first performant computer hex player, Hexy, developed in 1998 by Vadim V. Anshelevich.
-His approach, in opposition to following computer players, doesn't solely rely on highly optimized Alpha-Beta or Monte-Carlo searches but rather on intrinsic game properties to gain information on future plays. His approach teaches a lot about Hex game theory and paved the way for future computer players.
+His approach, in opposition to following computer players, doesn't solely rely on highly optimized Alpha-Beta or Monte-Carlo searches but rather on intrinsic game properties to gain information on future plays. His approach teaches a lot about Hex game theory and paved the way for future computer players. Although he describes the general idea here, there is still room for plenty of personnal initiative, as it was the case here.
 
 My player therefore couples an Alpha-Beta Search with an heuristic called H-SEARCH, which reveals future connections accross the board. This info, which acts like predicting future plays without pushing the Alpha-Beta depth search too far, is then used to evaluate the board position. This heuristic uses induction rules and properties used when connecting two hexes during a game to build a network of possible future connections. An in-depth explanation to the theory is availaible in the dedicated repo.
 
