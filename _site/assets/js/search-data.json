@@ -63,57 +63,71 @@
     "relUrl": "/#results--code"
   },"9": {
     "doc": "Home",
+    "title": "Keywords",
+    "content": "Game Theory, Computer Theory, Alpha-Beta, heuristic, Game of Hex . ",
+    "url": "/#keywords-1",
+    
+    "relUrl": "/#keywords-1"
+  },"10": {
+    "doc": "Home",
     "title": "Python automata game with water physics",
     "content": "Inspired by cellular automaton games like the Game of Life, we built an automaton game in Python with a strong emphasis on water physics called “La-haut”, inspired by Disney’s mobile game “Where’s My Water?”. This was developed in a single week by a team of six. ",
     "url": "/#python-automata-game-with-water-physics",
     
     "relUrl": "/#python-automata-game-with-water-physics"
-  },"10": {
+  },"11": {
     "doc": "Home",
     "title": "The Game",
     "content": "You are given a water source and a drain, and your goal—by placing or removing stones—is to direct the water from the source to the drain. The gameplay is further diversified by adding multiple elements with various properties, such as plants (which grow and absorb water), obsidian (indestructible with the basic tool), dynamite (to break obsidian in a limited area), and more. One of the levels of the game . Using Agile development, we created the basic gameplay elements first and then iteratively improved on the previous versions by adding new blocks, changing water physics, creating levels, etc. The water physics is a highlight: it uses clever tricks with block types to achieve realistic behavior using a simple automaton (which does not remember history and only uses the previous state to determine the present state). The game also includes a random-level option, which reuses a modified Game of Life automaton to generate block structures. I was personally in charge of the graphical interface using Pygame, which included front-end elements for the player such as options and level visualization. I also created a visual level editor from scratch, which allowed us to be much more creative when designing levels than by editing a matrix directly. This functional level editor could, with minimal additional work, be given to players to create their own levels, but that was not implemented due to time constraints. With this project I experienced Agile development in an intensive one-week sprint and became familiar with Python object-oriented programming, which I had previously used mainly in C or OCaml. The project also strengthened my communication skills for presenting our work and organizing the team, which was diverse and included members less familiar with development. ",
     "url": "/#the-game",
     
     "relUrl": "/#the-game"
-  },"11": {
+  },"12": {
     "doc": "Home",
     "title": "The Code",
     "content": "As this was a one-week student sprint challenge, the game is not technically perfect for publishing, but it is close enough with the main mechanics in place and a presentable user interface. The code is stored in the following repo: . github.com/Pvi05/La-haut . ",
     "url": "/#the-code",
     
     "relUrl": "/#the-code"
-  },"12": {
+  },"13": {
+    "doc": "Home",
+    "title": "Keywords",
+    "content": "PyGame, Front-end, Game of Life, automaton game . ",
+    "url": "/#keywords-2",
+    
+    "relUrl": "/#keywords-2"
+  },"14": {
     "doc": "Home",
     "title": "Smaller Side-projects",
     "content": " ",
     "url": "/#smaller-side-projects",
     
     "relUrl": "/#smaller-side-projects"
-  },"13": {
+  },"15": {
     "doc": "Home",
     "title": "Non-zenoness proving algorithm",
     "content": "When proving programs with timed automata, non-zenoness is a crucial property to ensure realistic behavior for our models. An automaton (which models a program or system) is Zeno when there is the possibility of infinitely many actions in finite time—i.e., the automaton can loop infinitely fast between different states. Currently UPPAAL, the mainstream tool for timed automata model checking, doesn’t include a feature to prove non-zenoness. Non-zenoness is a delicate property to address, especially when using synchronization between multiple automata. The most direct solution to synchronization would be to build the composition automaton of all automata, but this raises complexity concerns since the number of states of such a composition is exponential. Our algorithm uses rather a sufficient condition for single-automaton systems which we extend to multiple-automaton synchronization by checking pairs of loops related by a single synchronization. It does not provide necessary and sufficient conditions, but it highlights loops at risk of being Zeno and can affirm the non-zenoness of a system if no such risky loops are found. This program was developed as a side part of a different project about checking properties of an aircraft TCAS system; it was completed alone in one day as an algorithmic challenge. I enjoyed it—I’m always up for a coding challenge, especially when linked to computer theory (though this one involved a fair amount of XML parsing). This project can be found here: . github.com/Pvi05/Non-zenoness-checker . ",
     "url": "/#non-zenoness-proving-algorithm",
     
     "relUrl": "/#non-zenoness-proving-algorithm"
-  },"14": {
+  },"16": {
     "doc": "Home",
     "title": "Scraping Bot for Centrale student rooms",
     "content": "CentraleSupélec experiences a student housing shortage, and finding accommodation on campus can be challenging, especially for second-year students. To help with this problem, I built a bot capable of notifying the user via Discord when free rooms become available. This bot uses Selenium to scrape the student housing website (Césal), with careful cookie management to handle captchas, and, if needed, sends a private Discord message to warn of available rooms. Project can be found here: . github.com/Pvi05/Cesal_bot . ",
     "url": "/#scraping-bot-for-centrale-student-rooms",
     
     "relUrl": "/#scraping-bot-for-centrale-student-rooms"
-  },"15": {
+  },"17": {
     "doc": "Home",
     "title": "Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia",
     "content": "Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. Specialists use ultrasound and MRI to assess the disease and potentially schedule an operation to mitigate the impact on the lungs. They are usually confident about survival rates, but are less able to predict whether the foetus will require long-term respiratory support or only a period of close surveillance. Since this information is crucial for parents in their decision-making about continuing pregnancy, AP-HP and the Kremlin-Bicêtre hospital lab, France’s reference center for the disease, asked us to train models on their data to see if prediction capability could be improved. This project is currently underway and managed by a team of five. Due to confidentiality I am unable to disclose any code or dataset regarding this mission. ",
     "url": "/#survival-prediction-for-foetuses-suffering-from-congenital-diaphragmatic-hernia",
     
     "relUrl": "/#survival-prediction-for-foetuses-suffering-from-congenital-diaphragmatic-hernia"
-  },"16": {
+  },"18": {
     "doc": "Home",
     "title": "Home",
-    "content": ". | Cleaning and classification of hand-written job titles . | The mission further explained | How the mission went &amp; my contribution | What we delivered | Keywords | . | Game of Hex Computer Player . | The game of Hex | The player | Results &amp; Code | . | Python automata game with water physics . | The Game | The Code | . | Smaller Side-projects . | Non-zenoness proving algorithm | Scraping Bot for Centrale student rooms | Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia | . | . ",
+    "content": ". | Cleaning and classification of hand-written job titles . | The mission further explained | How the mission went &amp; my contribution | What we delivered | Keywords | . | Game of Hex Computer Player . | The game of Hex | The player | Results &amp; Code | Keywords | . | Python automata game with water physics . | The Game | The Code | Keywords | . | Smaller Side-projects . | Non-zenoness proving algorithm | Scraping Bot for Centrale student rooms | Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia | . | . ",
     "url": "/",
     
     "relUrl": "/"

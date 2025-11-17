@@ -109,6 +109,10 @@ I highly recommend the game of Hex for anyone interested in Computer and Game th
 
 This project was presented to the jury of the Tétraconcours (CentraleSupelec, Mines, CCINP) and the ENS de Paris, where it was graded respectively 18,5 and 16 out of 20 (both A+s).
 
+## Keywords
+
+Game Theory, Computer Theory, Alpha-Beta, heuristic, Game of Hex
+
 # Python automata game with water physics
 
 Inspired by cellular automaton games like the Game of Life, we built an automaton game in Python with a strong emphasis on water physics called "La-haut", inspired by Disney's mobile game "Where's My Water?". This was developed in a single week by a team of six.
@@ -139,6 +143,10 @@ As this was a one-week student sprint challenge, the game is not technically per
 The code is stored in the following repo:
 
 [github.com/Pvi05/La-haut](https://github.com/Pvi05/La-haut)
+
+## Keywords
+
+PyGame, Front-end, Game of Life, automaton game
 
 # Smaller Side-projects
 
