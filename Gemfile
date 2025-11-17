@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.2.2"       # or your installed version
-gem "jekyll-theme-minimal"
+gem "jekyll-remote-theme"
+gem "jekyll", "~> 3.10" 
 # gem "just-the-docs"
 # gem "jekyll-theme-slate"
 gem "csv"

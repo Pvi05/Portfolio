@@ -1,4 +1,6 @@
-theme: "jekyll-theme-minimal"
+remote_theme: just-the-docs/just-the-docs
 title: My Portfolio
 description: Student & Personal projects
 url: "http://127.0.0.1:4000"
+plugins:
+  - jekyll-remote-theme
