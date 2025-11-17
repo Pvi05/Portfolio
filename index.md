@@ -6,6 +6,9 @@ title: Home
 <!-- # Portfolio
 An overview of my student &amp; personnal projects  -->
 
+* TOC
+{:toc}
+
 # Cleaning and classification of hand-written job titles
 
 SypherAI is a french start-up selling a Saas CRM managing tool. Its tool is capable of cleaning and retriving missing info among potential clients, and sorting them using Machine Learning on previous sales to identify the ones most likely to buy.
@@ -38,6 +41,8 @@ One of the main issue was the identification of target categories, initialy deal
 One of the key technical solution which drasticly improved models results was the choice to perform two classifications instead of one. One on the job level (Senior, Junior, Manager, Director, etc) and one on the job departement (HR, Sales, IT, Production, etc). It greatly reduced models confusion between the level part of the title and the departement, which could sometimes lead things like 'Head IT manager' to be associated with 'HR manager'.
 
 After training some more basic models (the likes of FastText, BERT) to have a performance baseline, I personnally choose performance criterias to design a benchmark helping us in our model choice, and motivated this choice to the client. I also proposed multiple of the ideas cited above to resolve limitations, including the ILO table and the 2-level classification (originating from a tree-like classification idea, simplified into 2 levels).
+
+This project allowed me to get familiar with main models and methods to apprend Natural Language processing, aswell as communicating and delivering a project to a client, which was my first mission of this type.
 
 ## What we delivered
 
@@ -82,10 +87,10 @@ The Game of Hex is a very challenging game to try and solve algorithmically, due
 
 ## The player
 
-To develop this player we took inspiration from the first performant computer hex player, Hexy, developed in 1998 by Vadim V. Anshelevich.
+To develop this player I took inspiration from the first performant computer hex player, Hexy, developed in 1998 by Vadim V. Anshelevich.
 His approach, in opposition to following computer players, doesn't solely rely on highly optimized Alpha-Beta or Monte-Carlo searches but rather on intrinsic game properties to gain information on future plays. His approach teaches a lot about Hex game theory and paved the way for future computer players.
 
-Our player therefore couples an Alpha-Beta Search with an heuristic called H-SEARCH, which reveals future connections accross the board. This info, which acts like predicting future plays without pushing the Alpha-Beta depth search too far, is then used to evaluate the board position. This heuristic uses induction rules and properties used when connecting two hexes during a game to build a network of possible future connections. An in-depth explanation to the theory is availaible in the dedicated repo.
+My player therefore couples an Alpha-Beta Search with an heuristic called H-SEARCH, which reveals future connections accross the board. This info, which acts like predicting future plays without pushing the Alpha-Beta depth search too far, is then used to evaluate the board position. This heuristic uses induction rules and properties used when connecting two hexes during a game to build a network of possible future connections. An in-depth explanation to the theory is availaible in the dedicated repo.
 
 This methods gives the computer player great insights, allowing it to make relevant plays and correctly identifying critical region of the board. 
 
@@ -95,15 +100,15 @@ The technical implementation uses a variety of strutures offered by the Ocaml la
 
 ## Results & Code
 
-Our implementation did not match the one made by Vadim V. Anshelevich, as it suffered from calculation times, even with the optimizations, and could hardly work with the original parameters. However by the quality of its plays it showed how relevant searching for game properties can be to replace brute game-tree searching. 
+My implementation did not match the one made by Vadim V. Anshelevich, as it suffered from long calculation times, even with the optimizations, and could then hardly work with the original parameters. However by the quality of its plays it showed how relevant searching for game properties can be to replace brute game-tree searching. 
 
 The full code of the player is available in the following repo, along with a (french) report which goes in depth in the theoretical details of the implementation : 
 
-[https://github.com/Pvi05/HexPlayer](https://github.com/Pvi05/HexPlayer)
+[github.com/Pvi05/HexPlayer](https://github.com/Pvi05/HexPlayer)
 
 I highly recommend the game of Hex for anyone interested in Computer and Game theory, as its properties makes it an excellent study case for computer player algorithms, and a great game to try overall.
 
-This project was presented to the jury of the Tétraconcours (CentraleSupelec, Mines, CCINP) and the ENS de Paris, where it was graded respectively 18,5 and 16 out of 20.
+This project was presented to the jury of the Tétraconcours (CentraleSupelec, Mines, CCINP) and the ENS de Paris, where it was graded respectively 18,5 and 16 out of 20 (both A+s).
 
 # Python automata game with water physics
 
@@ -126,12 +131,45 @@ The game also include a random level option, which reuses a modified Game of Lif
 
 I was personnally in charge of the graphical interface using PyGame, which included front-end for player to use, such as options items or level vizualisation. It also included creating from scratch a visual level editor which allowed us to be much more creative when designing levels (than to be stuck with a matrix). This functionnal level-editor could almost with minimal work be given to the player to create its own levels, but this was not done due to time-constraint.
 
+With this project I had the chance to experience agile development in a one-week intensive coding session and made me familiar with Python Object oriented programming, which I had only done in C or Ocaml before. It also mobilized communication skills, to present our work and even to organize work within the group, which was composed of a very diversified team of student, some not interested in development originally.
+
 ## The Code
 
 As it is a student one-week sprint challenge, the game is not technically in perfect shape to consider publishing it, but close enough with the main mecanics in place and a presentable user interface. 
 
 The code is stored in the following repo :
 
-[https://github.com/Pvi05/La-haut](https://github.com/Pvi05/La-haut)
+[github.com/Pvi05/La-haut](https://github.com/Pvi05/La-haut)
 
-# Bonus Side-projects
+# Smaller Side-projects
+
+## Non-zenoness proving algorithm
+
+When proving programs and using timed automata, non-zenoness is a crucial propriety to ensure realistic behavior for our models.
+An automata (which models a program or a system) is zeno when there is the possibility for infinite actions in finite time, ie the automata loops infinitely rapidely beetween different states. 
+Currently UPPAAL, the mainstream program for timed automata model checking, doesn't have a feature to prove the non-zenoness propriety of an automata. Non-zenoness is indeed a delicate property to address, especially when using synchronisation between multiple automata. 
+
+The most direct solution to synchronisation would be to build the composition automata from all automatas, but this poses great concerns regarding complexity, as the number of state of such an automata is exponential. 
+Our algorithm uses a sufficient condition for single-automata systemswhich is extended to multiple automata synchronisation by checking couples of loops in relation by one synchronisation. It does not provide for sufficient and necessary condition, but does highlight loops at risk of being zeno, affrim the non-zenoness of a system if no such loops is found.
+
+This program was done as a side part of a different project regarding checking properties af a aircraft TCAS system ; and was completed alone in one day as a algorithmic challenge. I had great time doing it as I'm always up for a coding challenge, especially when linked to Computer Theory (although here it involded a lot of xml parsing as well).
+
+This project can be found here :
+
+[github.com/Pvi05/Non-zenoness-checker](https://github.com/Pvi05/Non-zenoness-checker)
+
+## Scraping Bot for Centrale student rooms
+
+CentraleSupelec is suffering of student housing shortage, and finding an accomodation on campus can therefore become challenging, especially for 2nd year student. To deal with this problem, I build a bot capable of warning the user through discord of a free rooms available. This bot uses Selenium to scrap the info on the student housing website (Césal), with clever cookie management to handle captchas, and if needed sends a message in private through discord to warn of available rooms.
+
+Project can be found here :
+
+[github.com/Pvi05/Cesal_bot](https://github.com/Pvi05/Cesal_bot)
+
+## Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
+
+Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3000 foetuses, caracterized by a hole in the diaphragm which lead to stomach, liver and other organs to go up the thorax and compress heart and lungs. Depending on the gravity and time of the disease, this can cause lung and heart development issues, potentially leading to foetus death in the most serious cases. Specialist uses ultrasound and IRM to assess the disease and potentially schedule a operation to compensate the effect on lungs. They are usually confident of the foetus survival rates, but are much less able to tell if the feotus is going to have to live permanently with a breathing aid, or if just a few month in close surveillance might be needed. Since this information is crucial for parents in their decision to keep the baby, APHP and the Kremlin-Bicêtre hospital lab, France reference center for the disease, have come forward and asked us to train models on their data to see if it could improve prediction capability.
+
+This project is currently underway and managed by a team of 5.
+
+Due to confidentiality I am unable to disclose any code or dataset regarding this mission.
