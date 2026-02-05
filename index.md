@@ -11,7 +11,7 @@ An overview of my student &amp; personnal projects  -->
 
 # Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
 
-Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. We built and trained a model capable of predicting oxygen requirement at 28 days post-birth with a significant accuracy, in order to further guide doctors' diagnosis.
+Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. We built and trained a model capable of predicting oxygen requirement at 28 days post-birth with a significant accuracy , in order to further guide doctors' diagnosis.
 
 ## A deeper dive into the mission context
 
@@ -25,7 +25,7 @@ In relation to APHP medical personnel, we proceeded first to make the medical da
 
 Due to the small number of samples, simplest methods are best, and we proceeded to train the first models and perform data analysis (feature ranking, various preprocessing, new target columns, ...). At this stage the medical team feedback was crucial, it allowed us to keep our result medically relevant, while our models would also confirm well-installed metrics to rank a foetus condition.
 
-For the final implementation, the key ideas were kept, but made robust and scaled with wider model testing, using of scikit-learn framework to build tailored models (Pipelines, Imputers, Scalers, Encoders, Recursive Feature Selection, Imblearn transformers, ...), and perform methodologically sound model scoring (NestedCrossValidation). Based on Accuracy and Recall (very important in a medical context), the most performant model families were identified to be Random Forest and Logistic Regression, the latter being finally chosen for a better overall trade-off.  
+For the final implementation, the key ideas were kept, but made robust and scaled with wider model testing, using of scikit-learn framework to build tailored models (Pipelines, Imputers, Scalers, Encoders, Recursive Feature Selection, Imblearn transformers, ...), and perform methodologically sound model scoring (NestedCrossValidation). Based on Accuracy and Recall (very important in a medical context), the most performant model families were identified to be Random Forest and Logistic Regression, the latter being finally chosen for a better overall trade-off. Scores on unseen data are about 82% accuracy and 86% recall.
 I was the one responsible for this last implementation, which was delivered to the hospital.
 
 Alongside the model selection, a graphical interface using Streamlit was developed to make the model easier to use in a medical context. One of the main features of this interface (and one of my ideas), was to include 5 closely related patients from the dataset (using KNN) alongside the prediction, allowing the doctor to reflect the current case with past ones.
