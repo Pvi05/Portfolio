@@ -11,39 +11,40 @@ An overview of my student &amp; personnal projects  -->
 
 # Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
 
-Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. We build and trained a model capable of predicting oxygenorequerance at 28 days post birth with a significant accuracy, in order to further guide doctors diagnosis.
+Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. We built and trained a model capable of predicting oxygen requirement at 28 days post-birth with a significant accuracy, in order to further guide doctors' diagnosis.
 
 ## A deeper dive into the mission context
 
-Mandated by APHP (Paris' hospital) reference center for the disease, we were asked to try and see if Machine Learning could help doctors make a better prediction whereas one foetus would need life-long oxygen support or not. It is an important prediction, as it is made as soon as the disease is diagnosed (usually ~5 month of pregnancy), will guideline the entire treatment process and whether IMG (termination of pregnancy) should be advised. Otherwise, a possible treatment is the insertion of a ballon in the lungs of the foetus to conteract the compression excerted by the other organs.
+Mandated by APHP (Paris' hospital) reference center for the disease, we were asked to try and see if Machine Learning could help doctors make a better prediction whether one foetus would need life-long oxygen support or not. It is an important prediction, as it is made as soon as the disease is diagnosed (usually ~5 months of pregnancy), will guide the entire treatment process and whether IMG (termination of pregnancy) should be advised. Otherwise, a possible treatment is the insertion of a balloon in the lungs of the foetus to counteract the compression exerted by the other organs.
 
-Specialists use ultrasound and MRI measurement and criterias (some which still being improved) to access the foetus condition. They are usually confident about survival rates, but are less able to predict whether the foetus will require long-term respiratory support or only a period of close surveillance, which is our mission to make clearer.
+Specialists use ultrasound / MRI measurements as criterias (some of which are still being improved) to assess the foetus condition. They are usually confident about survival rates, but are less able to predict whether the foetus will require long-term respiratory support or only a period of close surveillance, which is our mission to make clearer.
 
 ## How the mission went & my contribution
 
-In relation with APHP medical personnel, we proceeded first to make the medical data suitable for ML. This involved close inspection of data to remove irregularities, try to make the most of medical commentaries, uniformize data type (to float), and some more. In the end, we were left with a proper dataset of ~150 patients. I was at the origin of most innovation at this stage, most notably the conversion of medical commentaries as categorial data, the most we could do without requirering NLP.
+In relation to APHP medical personnel, we proceeded first to make the medical data suitable for ML. This involved close inspection of data to remove irregularities, try to make the most of medical commentaries, uniformize data types (to float), and some more. In the end, we were left with a proper dataset of ~150 patients. I was at the origin of most innovation at this stage, most notably the conversion of medical commentaries as categorical data, the most we could do without requiring NLP.
 
-Due to the small number of sample, simplest methods are best, and we proceeded to train the first models and data analysis (feature ranking, various preprocessing, new target columns, ...). At the stage the medical team feedback was crucial, it allowed us to keep our result medicaly relevant, while our models would also comfirm well-installed metrics to rank a feotus condition.
+Due to the small number of samples, simplest methods are best, and we proceeded to train the first models and perform data analysis (feature ranking, various preprocessing, new target columns, ...). At this stage the medical team feedback was crucial, it allowed us to keep our result medically relevant, while our models would also confirm well-installed metrics to rank a foetus condition.
 
-For the final implementation, main ideas were kept, but made robust and scaled with wider model testing, using a lot of scikit-learn framework to build tailored models (Pipelines, Imputers, Scalers, Encoders, Recursive Feature Selection, Imblearn transformers, ...). Based on Accuracy and Recall (very important in a medical context), the most performant models family were identified to be Random Forest and LogRegression , the latter being finally chosen for better tradeof.
-I was the one responsible for this last implementation, which was delivered to the hospital. 
+For the final implementation, the key ideas were kept, but made robust and scaled with wider model testing, using of scikit-learn framework to build tailored models (Pipelines, Imputers, Scalers, Encoders, Recursive Feature Selection, Imblearn transformers, ...), and perform methodologically sound model scoring (NestedCrossValidation). Based on Accuracy and Recall (very important in a medical context), the most performant model families were identified to be Random Forest and Logistic Regression, the latter being finally chosen for a better overall trade-off.  
+I was the one responsible for this last implementation, which was delivered to the hospital.
 
-Alongside the model selection, a graphical interface using StreamLit was developed to make the model easier to use in a medical context. One of the main feature of this interface (and one of my ideas), was to include 5 closely related patients from the dataset (using KNN) alongside the prediction, allowing the doctor to reflect the current case with past ones.
+Alongside the model selection, a graphical interface using Streamlit was developed to make the model easier to use in a medical context. One of the main features of this interface (and one of my ideas), was to include 5 closely related patients from the dataset (using KNN) alongside the prediction, allowing the doctor to reflect the current case with past ones.
 
-## what we delivered
+## What we delivered
 
-We delivered a complete model training and selection code, as basis for our final choice, alongside the final model implemented in the interface, ready to use in a medical level. Early meetings with the medical team were very positive, and we are expected to have soon a complete presentation of our work to hospital personnel, and publication of a research article (in a medical journal).
+We delivered a complete model training and selection code, as a basis for our final choice, alongside the final model implemented in the interface, ready to use in a medical level. Early meetings with the medical team were very positive, and we are expected to have soon a complete presentation of our work to hospital personnel, and publication of a research article (in a medical journal).
 
 Due to confidentiality I am unable to disclose any code or dataset regarding this mission. However, you can find below a screenshot of the delivered user interface.
 
 <div align='center'>
-  <img alt="StreamLit Interface" src="images/APHP.png" />
-  <p><em>To the left, fields for the selected features. Results and related patients on the right/ </em></p>
+  <img alt="Streamlit Interface" src="images/APHP.png" />
+  <p><em>To the left, fields for the selected features. Results and related patients on the right</em></p>
 </div>
 
 ## Keywords
 
 Classification, Machine Learning, Ensemble Methods, Decision Tree, Data Treatment & Analysis, Preprocessing methods, Scikit-Learn.
+
 
 # Cleaning and classification of hand-written job titles
 
