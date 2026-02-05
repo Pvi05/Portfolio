@@ -9,6 +9,42 @@ An overview of my student &amp; personnal projects  -->
 * TOC
 {:toc}
 
+# Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
+
+Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. We build and trained a model capable of predicting oxygenorequerance at 28 days post birth with a significant accuracy, in order to further guide doctors diagnosis.
+
+## A deeper dive into the mission context
+
+Mandated by APHP (Paris' hospital) reference center for the disease, we were asked to try and see if Machine Learning could help doctors make a better prediction whereas one foetus would need life-long oxygen support or not. It is an important prediction, as it is made as soon as the disease is diagnosed (usually ~5 month of pregnancy), will guideline the entire treatment process and whether IMG (termination of pregnancy) should be advised. Otherwise, a possible treatment is the insertion of a ballon in the lungs of the foetus to conteract the compression excerted by the other organs.
+
+Specialists use ultrasound and MRI measurement and criterias (some which still being improved) to access the foetus condition. They are usually confident about survival rates, but are less able to predict whether the foetus will require long-term respiratory support or only a period of close surveillance, which is our mission to make clearer.
+
+## How the mission went & my contribution
+
+In relation with APHP medical personnel, we proceeded first to make the medical data suitable for ML. This involved close inspection of data to remove irregularities, try to make the most of medical commentaries, uniformize data type (to float), and some more. In the end, we were left with a proper dataset of ~150 patients. I was at the origin of most innovation at this stage, most notably the conversion of medical commentaries as categorial data, the most we could do without requirering NLP.
+
+Due to the small number of sample, simplest methods are best, and we proceeded to train the first models and data analysis (feature ranking, various preprocessing, new target columns, ...). At the stage the medical team feedback was crucial, it allowed us to keep our result medicaly relevant, while our models would also comfirm well-installed metrics to rank a feotus condition.
+
+For the final implementation, main ideas were kept, but made robust and scaled with wider model testing, using a lot of scikit-learn framework to build tailored models (Pipelines, Imputers, Scalers, Encoders, Recursive Feature Selection, Imblearn transformers, ...). Based on Accuracy and Recall (very important in a medical context), the most performant models family were identified to be Random Forest and LogRegression , the latter being finally chosen for better tradeof.
+I was the one responsible for this last implementation, which was delivered to the hospital. 
+
+Alongside the model selection, a graphical interface using StreamLit was developed to make the model easier to use in a medical context. One of the main feature of this interface (and one of my ideas), was to include 5 closely related patients from the dataset (using KNN) alongside the prediction, allowing the doctor to reflect the current case with past ones.
+
+## what we delivered
+
+We delivered a complete model training and selection code, as basis for our final choice, alongside the final model implemented in the interface, ready to use in a medical level. Early meetings with the medical team were very positive, and we are expected to have soon a complete presentation of our work to hospital personnel, and publication of a research article (in a medical journal).
+
+Due to confidentiality I am unable to disclose any code or dataset regarding this mission. However, you can find below a screenshot of the delivered user interface.
+
+<div align='center'>
+  <img alt="StreamLit Interface" src="images/APHP.png" />
+  <p><em>To the left, fields for the selected features. Results and related patients on the right/ </em></p>
+</div>
+
+## Keywords
+
+Classification, Machine Learning, Ensemble Methods, Decision Tree, Data Treatment & Analysis, Preprocessing methods, Scikit-Learn.
+
 # Cleaning and classification of hand-written job titles
 
 SypherAI is a French start-up selling a SaaS CRM management tool. Its system is capable of cleaning and retrieving missing information about potential clients, and sorting them using machine learning on previous sales to identify those most likely to buy.
@@ -63,7 +99,7 @@ This mission was completed as part of a team of five people.
 
 ## Keywords
 
-NLP, zero-shot, classification, ML
+NLP, Zero-shot Learning, Classification, Pipeline
 
 # Game of Hex Computer Player
 
@@ -99,7 +135,7 @@ The technical implementation uses a variety of structures offered by OCaml to ma
 
 ## Results & Code
 
-My implementation did not match the one made by Vadim V. Anshelevich, as it suffered from long calculation times, even with the optimizations, and could then hardly work with the original parameters. However by the quality of its plays it showed how relevant searching for game properties can be to replace brute game-tree searching. 
+My implementation did not match the one made by Vadim V. Anshelevich, as it suffered from long calculation times, and could hardly work with the original parameters. However by the quality of its plays it showed how relevant searching for game properties can be to replace brute game-tree searching. 
 
 The full code of the player is available in the following repo, along with a (french) report which goes in depth in the theoretical details of the implementation : 
 
@@ -173,12 +209,9 @@ Project can be found here:
 
 [github.com/Pvi05/Cesal_bot](https://github.com/Pvi05/Cesal_bot)
 
-## Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
+## Building a frugal VLM
 
-Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening.
+In partnership with LetxbeIA, a french deeptech specialised in document treatment with comuter vision, we are challenged to make a VLM with similar capacities to the current models used by the company, but much smaller, and therefore more sustainable. Current models are thought to be over-sized for their actual use case, and reduction from 7b parameters to 1b is the current goal.
 
-Specialists use ultrasound and MRI to assess the disease and potentially schedule an operation to mitigate the impact on the lungs. They are usually confident about survival rates, but are less able to predict whether the foetus will require long-term respiratory support or only a period of close surveillance. Since this information is crucial for parents in their decision-making about continuing pregnancy, AP-HP and the Kremlin-Bicêtre hospital lab, France's reference center for the disease, asked us to train models on their data to see if prediction capability could be improved.
-
-This project is currently underway and managed by a team of five.
-
-Due to confidentiality I am unable to disclose any code or dataset regarding this mission.
+This project is underway with a team of 5 people.
+Due to Intellectual Property, I an unable to release now any code, but this may change soon in the future, as the company is Open-Source oriented.
