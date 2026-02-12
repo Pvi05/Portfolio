@@ -7,7 +7,7 @@ title: Home
 An overview of my student &amp; personnal projects  -->
 
 * TOC
-{:toc}
+{:toc levels="1"}
 
 # Introduction
 
