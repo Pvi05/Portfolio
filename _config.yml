@@ -4,3 +4,5 @@ description: Student & Personal projects
 url: "http://127.0.0.1:4000"
 plugins:
   - jekyll-remote-theme
+kramdown:
+  toc_levels: 1..1
