@@ -9,6 +9,10 @@ An overview of my student &amp; personnal projects  -->
 * TOC
 {:toc}
 
+# Introduction
+
+In this Portfolio you may find IA/ML oriented projects (using mostly Python and main-stream librairies such as Scikit-learn, Pytorch), but also more low-level projects (using OCaml, C, VHDL). 
+
 # Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
 
 Congenital Diaphragmatic Hernia is a rare disease affecting about 1 in 3,000 foetuses, characterized by a hole in the diaphragm that allows the stomach, liver and other organs to move into the thorax and compress the heart and lungs. Depending on the severity and timing of the condition, this can cause lung and heart development issues and, in the most serious cases, can be life-threatening. We built and trained a model capable of predicting oxygen requirement at 28 days post-birth with a significant accuracy , in order to further guide doctors' diagnosis.
@@ -102,6 +106,45 @@ This mission was completed as part of a team of five people.
 
 NLP, Zero-shot Learning, Classification, Pipeline
 
+# Building a fonctionnal minimal RISC architecture
+
+Using VHDL and Intel's Quartus Suite, I built a fonctionnal RISC architecture, describing and linking the main components to form a fully-fonctionnal CPU. Alongside this hardware description, I designed an ISA and Assembly to go along and use this CPU.
+
+## The project in detail 
+
+The final architure implements all the essentials of a Von Neumann-like computer architecture, namely basic arithmetics and bit-wise operations, conditionnal jumps, RAM interaction, stack interactions, and function handling.
+
+To achieve this it uses the following components :
+- Decoder
+- ALU providing operations such as ADD, SUB, AND, OR, Logical Shifts, and more
+- Register File comprising of 14 general purpose registers, plus a stack pointer (sp) and link register (lr). The program counter is also accessible as a register (pc)
+- Fetch unit that store the pc and updates when jumping
+- ROM to store the program instructions
+- RAM to store volatile data
+
+To interact with the system, I provided an Assembly language with its Python Assembler, allowing easier program design. 
+The Assembly notably supports the usage of labels for easier function and jump manipulations. 
+
+<div align='center'>
+  <img alt="CPU design" src="images/CPU.png" />
+  <p><em>Overview of the CPU Architecture</em></p>
+</div>
+
+## Results and Sample program
+
+The project was tested using ModelSim and testbenches, to ensure components and programs correct behavior. 
+
+To showcase the final architecture, you may find an implementation of Russian Peasant Multiplication (multiplication not being natively supported) and Exponentiation by Squaring, which illustrate the function handling and recursive capabilities of the system.
+
+Finally the code was synthesised for a MAX10 Altera FPGA, to test real-world behavior. However no interaction with the card was implemented, so it is not shown in the final version.
+
+The complete code for the project is available here :
+
+[github.com/Pvi05/RISC_CPU](https://github.com/Pvi05/RISC_CPU)
+
+## Keywords
+VHDL, Hardware Conception, RISC, Assembly, FPGA
+
 # Game of Hex Computer Player
 
 Fully written in OCaml and built using Dune, I implemented my own Hex computer player. It uses various elements of game theory to achieve performance, including an optimized version of the Alpha-Beta algorithm with move ordering and pruning developed specifically for this game. This project was presented as a computer science research work (TIPE) during the competitive exams for entry into top French engineering schools.
@@ -150,13 +193,30 @@ This project was presented to the jury of the Tétraconcours (CentraleSupelec, M
 
 Game Theory, Computer Theory, Alpha-Beta, heuristic, Game of Hex
 
-# Python automata game with water physics
+# Smaller Side-projects
+
+## Scraping Bot for Centrale student rooms
+
+CentraleSupélec experiences a student housing shortage, and finding accomodation on campus can be challenging, especially for second-year students. To help with this problem, I built a bot capable of notifying the user via Discord when free rooms become available. This bot uses Selenium to scrape the student housing website (Césal), with careful cookie management to handle captchas, and, if needed, sends a private Discord message to warn of available rooms. Additionaly, multiple options are accessible to the host to custom their experience with the bot (choose which building to track, which discord Ids should receive message, ...)
+
+This bot was used by multiple classmates and students (including myself) to help them find the accomodation they needed.
+
+Project can be found here:
+
+[github.com/Pvi05/Cesal_bot](https://github.com/Pvi05/Cesal_bot)
+
+## Building a frugal VLM
+
+In partnership with LetxbeIA, a french deeptech specialised in document treatment with comuter vision, we are challenged to make a VLM with similar capacities to the current models used by the company, but much smaller, and therefore more sustainable. Current models are thought to be over-sized for their actual use case, and reduction from 7b parameters to ~4b is the ideal goal.
+
+This project is underway with a team of 5 people.
+Due to Intellectual Property, I an unable to release now any code, but this may change soon in the future, as the company is Open-Source oriented.
+
+## Python automata game with water physics
 
 Inspired by cellular automaton games like the Game of Life, we built an automaton game in Python with a strong emphasis on water physics called "La-haut", inspired by Disney's mobile game "Where's My Water?". This was developed in a single week by a team of six.
 
-## The Game
-
-You are given a water source and a drain, and your goal—by placing or removing stones—is to direct the water from the source to the drain. The gameplay is further diversified by adding multiple elements with various properties, such as plants (which grow and absorb water), obsidian (indestructible with the basic tool), dynamite (to break obsidian in a limited area), and more.
+You are given a water source and a drain, and your goal—by placing or removing stones—is to direct the water from the source to the drain. The gameplay is further diversified by adding other elements with various properties, such as plants, obsidian (indestructible), dynamite, and more.
 
 <div align='center'>
   <img alt="Hex board" src="images/lahaut.png" />
@@ -165,27 +225,13 @@ You are given a water source and a drain, and your goal—by placing or removing
 
 Using Agile development, we created the basic gameplay elements first and then iteratively improved on the previous versions by adding new blocks, changing water physics, creating levels, etc.
 
-The water physics is a highlight: it uses clever tricks with block types to achieve realistic behavior using a simple automaton (which does not remember history and only uses the previous state to determine the present state).
+The water physics is a highlight: it uses clever tricks with block types to achieve realistic behavior simply using an automaton. The game also includes a random-level option, which reuses a modified Game of Life automaton to generate block structures.
 
-The game also includes a random-level option, which reuses a modified Game of Life automaton to generate block structures.
+In charge of the graphical interface using Pygame, I also created a visual level editor from scratch, which allowed my team to be much more creative. This functional level editor was not given to players due to time constraints.
 
-I was personally in charge of the graphical interface using Pygame, which included front-end elements for the player such as options and level visualization. I also created a visual level editor from scratch, which allowed us to be much more creative when designing levels than by editing a matrix directly. This functional level editor could, with minimal additional work, be given to players to create their own levels, but that was not implemented due to time constraints.
-
-With this project I experienced Agile development in an intensive one-week sprint and became familiar with Python object-oriented programming, which I had previously used mainly in C or OCaml. The project also strengthened my communication skills for presenting our work and organizing the team, which was diverse and included members less familiar with development.
-
-## The Code
-
-As this was a one-week student sprint challenge, the game is not technically perfect for publishing, but it is close enough with the main mechanics in place and a presentable user interface.
-
-The code is stored in the following repo:
+With this project I experienced Agile development in an intensive one-week sprint and became familiar with Python object-oriented programming.
 
 [github.com/Pvi05/La-haut](https://github.com/Pvi05/La-haut)
-
-## Keywords
-
-PyGame, Front-end, Game of Life, automaton game
-
-# Smaller Side-projects
 
 ## Non-zenoness proving algorithm
 
@@ -196,23 +242,13 @@ Currently UPPAAL, the mainstream tool for timed automata model checking, doesn't
 The most direct solution to synchronization would be to build the composition automaton of all automata, but this raises complexity concerns since the number of states of such a composition is exponential.
 Our algorithm uses rather a sufficient condition for single-automaton systems which we extend to multiple-automaton synchronization by checking pairs of loops related by a single synchronization. It does not provide necessary and sufficient conditions, but it highlights loops at risk of being Zeno and can affirm the non-zenoness of a system if no such risky loops are found.
 
-This program was developed as a side part of a different project about checking properties of an aircraft TCAS system; it was completed alone in one day as an algorithmic challenge. I enjoyed it—I'm always up for a coding challenge, especially when linked to computer theory (though this one involved a fair amount of XML parsing).
+This program was developed as a side part of a different project about checking properties of an aircraft TCAS system; it was done completed alone in one day as an algorithmic challenge. I enjoyed it—I'm always up for a coding challenge, especially when linked to computer theory (though this one involved a fair amount of XML parsing).
+The overall project was graded A+.
 
 This project can be found here:
 
 [github.com/Pvi05/Non-zenoness-checker](https://github.com/Pvi05/Non-zenoness-checker)
 
-## Scraping Bot for Centrale student rooms
+## For the future
 
-CentraleSupélec experiences a student housing shortage, and finding accommodation on campus can be challenging, especially for second-year students. To help with this problem, I built a bot capable of notifying the user via Discord when free rooms become available. This bot uses Selenium to scrape the student housing website (Césal), with careful cookie management to handle captchas, and, if needed, sends a private Discord message to warn of available rooms.
-
-Project can be found here:
-
-[github.com/Pvi05/Cesal_bot](https://github.com/Pvi05/Cesal_bot)
-
-## Building a frugal VLM
-
-In partnership with LetxbeIA, a french deeptech specialised in document treatment with comuter vision, we are challenged to make a VLM with similar capacities to the current models used by the company, but much smaller, and therefore more sustainable. Current models are thought to be over-sized for their actual use case, and reduction from 7b parameters to 1b is the current goal.
-
-This project is underway with a team of 5 people.
-Due to Intellectual Property, I an unable to release now any code, but this may change soon in the future, as the company is Open-Source oriented.
+I have several projects in mind. One of which would be to build a home-compiler for a language I have yet to decide. I hope to be able to bring updates soon on this project : stay tuned !
