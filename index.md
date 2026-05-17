@@ -11,7 +11,7 @@ An overview of my student &amp; personal projects  -->
 
 # Introduction
 
-In this Portfolio you may find IA/ML oriented projects (using mostly Python and main-stream libraries such as Scikit-learn, Pytorch), but also more low-level projects (using OCaml, C, VHDL). 
+In this Portfolio you may find AI/ML oriented projects (using mostly Python and main-stream libraries such as Scikit-learn, Pytorch), but also more low-level projects (using OCaml, C, VHDL). 
 
 # Survival prediction for foetuses suffering from Congenital Diaphragmatic Hernia
 
@@ -59,7 +59,7 @@ Classification, Machine Learning, Ensemble Methods, Decision Tree, Log Regressio
 SypherAI is a French start-up selling a SaaS CRM management tool. Its system is capable of cleaning and retrieving missing information about potential clients, and sorting them using machine learning on previous sales to identify those most likely to buy.
 The job title is one of the most critical pieces of information for the ML algorithm.
 
-Our mission was to provide a pipeline capable of **cleaning and classifying hand-written job titles** previously extracted from LinkedIn and similar sources.
+Our mission was to provide a pipeline capable of **cleaning and classifying hand-written job titles** previously extracted from LinkedIn and similar sources. Thanks to our work, for a 1,000+ client list, only a handful of low-confidence job titles would typically require correction.
 
 ## The mission further explained
 
@@ -93,7 +93,7 @@ This project allowed me to become familiar with main models and methods for lear
 
 We delivered to SypherAI a fully working and ready-to-transfer Python codebase containing our model, paired with a GUI to make using our pipeline easier.
 
-The main objective of this project was to reduce manual classification as much as possible, and it was successful: for a 1,000+ client list, only a handful of low-confidence job titles typically require correction.
+The main objective of this project was to reduce manual classification as much as possible, and it was successful, restricting manual work to only a handful of low-confidence job titles.
 
 Due to confidentiality, I am unable to disclose any code, dataset, or app produced in this mission.
 You can, however, find below a short video presentation of our GUI.
@@ -141,6 +141,8 @@ The project was tested using ModelSim and testbenches, to ensure correct behavio
 To showcase the final architecture, you may find an implementation of Russian Peasant Multiplication (multiplication not being natively supported) and Exponentiation by Squaring, which illustrate the function handling and recursive capabilities of the system.
 
 Finally the code was synthesised for a MAX10 Altera FPGA, to test real-world behavior. However no interaction with the card was implemented, so it is not shown in the final version.
+
+This project developed my interest for low-level conception and CPU-architecture, a subject that is crucial in AI development to ensure efficient hardware usage.
 
 The complete code for the project is available here :
 
@@ -211,9 +213,11 @@ Project can be found here:
 
 ## Building a frugal VLM
 
-In partnership with LetxbeIA, a french deeptech specialised in document treatment with computer vision, we were challenged to make a VLM with similar capacities to the current models used by the company, but much smaller, and therefore more sustainable. Current models are thought to be over-sized for their actual use case, and reduction from 7b parameters to ~4b is the ideal goal.
+In partnership with LetxbeIA, a french deeptech specialised in document treatment with computer vision, we were challenged to make a VLM with similar capacities to the current models used by the company, but much smaller, and therefore more sustainable. Current models are thought to be over-sized for their actual use case, and reduction from 7B parameters to ~1B is the ideal goal.
 
-This project is underway with a team of 5 people.
+We delivered already multiple candidate models. One using quantization to measure the impact it had on the model capabilities. One relying on distillation to reduce the number of parameters, and a last one based on fine-tuning an open-source performant OCR model to the information bound identification task required by the client. One of the models we tried fine-tuning was GLM-OCR, a new state-of-the-art VLM with strong document understanding capabilities with lightweight structure (<1B).
+
+This project is still underway with a team of 5 people.
 Due to Intellectual Property, I am unable to release now any code, but this may change soon in the future, as the company is Open-Source oriented.
 
 ## Python automata game with water physics
@@ -252,7 +256,3 @@ The overall project was graded A+.
 This project can be found here:
 
 [github.com/Pvi05/Non-zenoness-checker](https://github.com/Pvi05/Non-zenoness-checker)
-
-## For the future
-
-I have several projects in mind. One of which would be to build a home-compiler for a language I have yet to decide. I hope to be able to bring updates soon on this project : stay tuned !
